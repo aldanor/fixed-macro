@@ -137,6 +137,9 @@ pub fn fixed(input: TokenStream) -> TokenStream {
         Ok(ty) => ty,
         Err(err) => abort!(ident.span(), "invalid fixed type: {}", err),
     };
+    if !ty.signed && neg {
+        abort!(lit.span(), "negative value for an unsigned fixed type");
+    }
     let literal = match parse_fixed_literal(&lit) {
         Ok(lit) => format!("{}{}", (if neg { "-" } else { "" }), lit),
         Err(err) => abort!(lit.span(), "invalid fixed value: {}", err),

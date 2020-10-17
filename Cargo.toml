@@ -5,8 +5,10 @@ authors = ["Ivan Smirnov <i.s.smirnov@gmail.com>"]
 edition = "2018"
 
 [workspace]
-members = [".", "fixed-macro-impl"]
-default-members = [".", "fixed-macro-impl"]
+members = [".", "fixed-macro-impl", "fixed-macro-types"]
+default-members = [".", "fixed-macro-impl", "fixed-macro-types"]
 
 [dependencies]
+fixed = "1"
 fixed-macro-impl = { version = "0.1.0", path = "fixed-macro-impl" }
+fixed-macro-types = { version = "0.1.0", path = "fixed-macro-types" }

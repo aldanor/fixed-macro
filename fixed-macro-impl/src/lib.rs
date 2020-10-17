@@ -115,8 +115,6 @@ struct FixedInput {
 
 impl Parse for FixedInput {
     fn parse(input: ParseStream) -> parse::Result<Self> {
-        let ident = input.parse()?;
-        input.parse::<Token![:]>()?;
         let mut neg = false;
         if input.peek(Token![-]) {
             neg = true;
@@ -125,6 +123,8 @@ impl Parse for FixedInput {
             let _ = input.parse::<Token![+]>();
         }
         let lit = input.parse()?;
+        input.parse::<Token![:]>()?;
+        let ident = input.parse()?;
         Ok(Self { ident, neg, lit })
     }
 }

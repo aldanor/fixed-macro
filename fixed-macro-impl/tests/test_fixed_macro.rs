@@ -15,8 +15,8 @@ where
 
 #[test]
 fn test_fixed_macro() {
-    let x = fixed!(I24F40: -0_1.2345_6_78E-3);
+    let x = fixed!(-0_1.2345_6_78E-3: I24F40);
     check::<ft::I24F40>(x, "-0.0012345678");
-    let x = fixed!(I12F4: 0xff);
-    check::<ft::I12F4>(x, "255");
+    let x = fixed!(0xff: U12F4);
+    check::<ft::U12F4>(x, "255");
 }

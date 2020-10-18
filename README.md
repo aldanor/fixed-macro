@@ -1,6 +1,12 @@
 fixed-macro
 ===========
 
+[![Build](https://github.com/aldanor/fixed-macro/workflows/CI/badge.svg)](https://github.com/aldanor/fixed-macro/actions?query=branch%3Amaster)
+[![Latest Version](https://img.shields.io/crates/v/fixed-macro.svg)](https://crates.io/crates/fixed-macro)
+[![Documentation](https://docs.rs/fixed-macro/badge.svg)](https://docs.rs/fixed-macro)
+[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 This library provides [`fixed!`][fm-fixed], a proc-macro that allows
 easily creating fixed-point constants for all of the fixed-point types provided in
 [`fixed`][fixed] crate.

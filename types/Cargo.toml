@@ -10,7 +10,7 @@ description = "Macro aliases used in the `fixed-macro` crate."
 
 [dependencies]
 fixed = "1"
-fixed-macro-impl = { version = "0.1.0", path = "../fixed-macro-impl" }  # !V
+fixed-macro-impl = { version = "0.1.0", path = "../impl" }  # !V
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

@@ -19,12 +19,12 @@ keywords = ["mathematics", "numerics", "fixed"]
 categories = ["algorithms", "data-structures", "science"]
 
 [workspace]
-members = [".", "fixed-macro-impl", "fixed-macro-types"]
+members = [".", "impl", "types"]
 
 [dependencies]
 fixed = "1"
-fixed-macro-impl = { version = "0.1.0", path = "fixed-macro-impl" }  # !V
-fixed-macro-types = { version = "0.1.0", path = "fixed-macro-types" }  # !V
+fixed-macro-impl = { version = "0.1.0", path = "impl" }  # !V
+fixed-macro-types = { version = "0.1.0", path = "types" }  # !V
 
 [dev-dependencies]
 trybuild = "1.0"

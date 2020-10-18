@@ -12,3 +12,6 @@ default-members = [".", "fixed-macro-impl", "fixed-macro-types"]
 fixed = "1"
 fixed-macro-impl = { version = "0.1.0", path = "fixed-macro-impl" }
 fixed-macro-types = { version = "0.1.0", path = "fixed-macro-types" }
+
+[dev-dependencies]
+trybuild = "1.0"

@@ -6,7 +6,6 @@ edition = "2018"
 
 [workspace]
 members = [".", "fixed-macro-impl", "fixed-macro-types"]
-default-members = [".", "fixed-macro-impl", "fixed-macro-types"]
 
 [dependencies]
 fixed = "1"

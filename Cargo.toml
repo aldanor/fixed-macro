@@ -1,6 +1,6 @@
 [package]
 name = "fixed-macro"
-version = "0.1.0"
+version = "0.1.0"  # !V
 authors = ["Ivan Smirnov <i.s.smirnov@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -10,8 +10,8 @@ members = [".", "fixed-macro-impl", "fixed-macro-types"]
 
 [dependencies]
 fixed = "1"
-fixed-macro-impl = { version = "0.1.0", path = "fixed-macro-impl" }
-fixed-macro-types = { version = "0.1.0", path = "fixed-macro-types" }
+fixed-macro-impl = { version = "0.1.0", path = "fixed-macro-impl" }  # !V
+fixed-macro-types = { version = "0.1.0", path = "fixed-macro-types" }  # !V
 
 [dev-dependencies]
 trybuild = "1.0"

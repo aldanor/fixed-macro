@@ -1,9 +1,22 @@
+# Copyright © 2020 Ivan Smirnov
+
+# Copying and distribution of this file, with or without modification,
+# are permitted in any medium without royalty provided the copyright
+# notice and this notice are preserved. This file is offered as-is,
+# without any warranty.
+
 [package]
 name = "fixed-macro"
 version = "0.1.0"  # !V
 authors = ["Ivan Smirnov <i.s.smirnov@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/aldanor/fixed-macro"
+documentation = "https://docs.rs/fixed-macro"
+readme = "README.md"
+description = "Macros for creating fixed-point constants for types in the `fixed` crate."
+keywords = ["mathematics", "numerics", "fixed"]
+categories = ["algorithms", "data-structures", "science"]
 
 [workspace]
 members = [".", "fixed-macro-impl", "fixed-macro-types"]
@@ -15,3 +28,6 @@ fixed-macro-types = { version = "0.1.0", path = "fixed-macro-types" }  # !V
 
 [dev-dependencies]
 trybuild = "1.0"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

@@ -119,8 +119,6 @@ impl Parse for FixedInput {
         if input.peek(Token![-]) {
             neg = true;
             let _ = input.parse::<Token![-]>();
-        } else if input.peek(Token![+]) {
-            let _ = input.parse::<Token![+]>();
         }
         let lit = input.parse()?;
         input.parse::<Token![:]>()?;

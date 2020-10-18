@@ -4,7 +4,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! fixed-macro = "0.1"
+//! fixed-macro = "1.0"
 //! ```
 //!
 //! *Compiler support: same as [`fixed`][fixed] crate, rustc 1.44+ as of the time of writing.*

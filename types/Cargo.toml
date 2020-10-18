@@ -1,6 +1,6 @@
 [package]
 name = "fixed-macro-types"
-version = "0.1.0"  # !V
+version = "1.0.0"  # !V
 authors = ["Ivan Smirnov <i.s.smirnov@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -10,7 +10,7 @@ description = "Macro aliases used in the `fixed-macro` crate."
 
 [dependencies]
 fixed = "1"
-fixed-macro-impl = { version = "0.1.0", path = "../impl" }  # !V
+fixed-macro-impl = { version = "1.0.0", path = "../impl" }  # !V
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

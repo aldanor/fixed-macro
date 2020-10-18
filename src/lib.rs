@@ -1,2 +1,5 @@
 pub use fixed_macro_impl::fixed;
-pub use fixed_macro_types as types;
+
+pub mod types {
+    pub use fixed_macro_types::*;
+}

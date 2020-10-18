@@ -127,6 +127,36 @@ impl Parse for FixedInput {
     }
 }
 
+/// Create a fixed-point constant value which is parsed at compile time.
+///
+/// The literal accepted by the macro uses the same syntax for int and float literals
+/// as Rust itself, this includes underscores and scientific notation.
+///
+/// The syntax of the macro is as follows:
+///
+/// ```ignore
+/// fixed!(<value>: <type>)
+/// ```
+///
+/// where `<value>` is an integer literal or a float literal, and `<type>` is either of the
+/// form `I<i>F<f>` or `U<i>F<f>`, matching one of the type aliases provided in
+/// [`fixed::types`](https://docs.rs/fixed/latest/fixed/types/index.html). Note in particular
+/// that `<value>` has to be a literal and not an arbitrary arithmetic expression, and that
+/// `<type>` is considered a special identifier, so that it doesn't have to be imported first.
+///
+/// ### Examples
+///
+/// ```rust
+/// use fixed_macro::fixed;
+/// use fixed::types::U8F8;
+///
+/// let x1 = fixed!(-1.23: I32F32);         // float literal (note, the type is not in scope)
+/// const X2: U8F8 = fixed!(1.2: U8F8);     // can be used to initialize const values
+/// let x3 = fixed!(123: U8F8);             // decimal integers work as well
+/// let x4 = fixed!(0x7B: U8F8);            // and hex/oct/bin integers too
+/// let x5 = fixed!(1_234.567_890: I32F32); // underscores are ignored, same as in rustc
+/// let x7 = fixed!(0.12e+01: U8F8);        // scientific notation is also supported
+/// ```
 #[proc_macro]
 #[proc_macro_error]
 pub fn fixed(input: TokenStream) -> TokenStream {

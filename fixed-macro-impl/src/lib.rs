@@ -37,9 +37,9 @@ impl FixedType {
         let signed = match name.chars().next().ok_or("?")? {
             'I' => true,
             'U' => false,
-            _ => return Err("type name must start with 'I' or 'U'"),
+            _ => return Err("type name must start with `I` or `U`"),
         };
-        let f_pos = name.find('F').ok_or("type name must contain 'F'")?;
+        let f_pos = name.find('F').ok_or("type name must contain `F`")?;
         let int_bits = parse_size(&name[1..f_pos]).ok_or("invalid number of integer bits")?;
         let frac_bits =
             parse_size(&name[f_pos + 1..]).ok_or("invalid number of fractional bits")?;

@@ -4,7 +4,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! fixed-macro = "1.0"
+//! fixed-macro = "1.1"
 //! ```
 //!
 //! *Compiler support: rustc 1.45+.*

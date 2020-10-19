@@ -7,7 +7,7 @@
 //! fixed-macro = "1.0"
 //! ```
 //!
-//! *Compiler support: same as [`fixed`][fixed] crate, rustc 1.44+ as of the time of writing.*
+//! *Compiler support: rustc 1.45+.*
 //!
 //! [fixed]: https://docs.rs/fixed
 //! [fixed-types]: https://docs.rs/fixed/latest/fixed/types/index.html

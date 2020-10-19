@@ -5,15 +5,13 @@ use proc_macro2::Literal;
 
 macro_rules! fixed_to_literal {
     ($int_bits:expr, $frac_bits:expr, $signed:expr, $s:expr, $w:expr, $i:expr, $f:expr) => {
-        paste! {
             if ($int_bits, $frac_bits, $signed) == ($i, $f, true) {
-                return fixed::types::[<I $i F $f>]::from_str($s)
-                    .map(|x| x.to_bits()).map(Literal::[<i $w _unsuffixed>])
+                return paste![fixed::types::[<I $i F $f>]::from_str]($s)
+                    .map(|x| x.to_bits()).map(paste![Literal::[<i $w _unsuffixed>]])
             } else if ($int_bits, $frac_bits, $signed) == ($i, $f, false) {
-                return fixed::types::[<U $i F $f>]::from_str($s)
-                    .map(|x| x.to_bits()).map(Literal::[<u $w _unsuffixed>])
+                return paste![fixed::types::[<U $i F $f>]::from_str]($s)
+                    .map(|x| x.to_bits()).map(paste![Literal::[<u $w _unsuffixed>]])
             }
-        }
     };
 }
 

@@ -78,3 +78,7 @@ pub use fixed_macro_impl::fixed;
 pub mod types {
     pub use fixed_macro_types::*;
 }
+
+// Not public API. Used by generated code.
+#[doc(hidden)]
+pub use fixed as __fixed;

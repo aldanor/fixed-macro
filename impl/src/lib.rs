@@ -177,6 +177,6 @@ pub fn fixed(input: TokenStream) -> TokenStream {
         Err(err) => abort!(lit.span(), "invalid fixed value: {}", err),
     };
     let type_ident = ty.type_ident();
-    let code = quote! { ::fixed::types::#type_ident::from_bits(#bits) };
+    let code = quote! { ::fixed_macro::__fixed::types::#type_ident::from_bits(#bits) };
     code.into()
 }

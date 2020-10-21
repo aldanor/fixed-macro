@@ -1,6 +1,6 @@
 [package]
 name = "fixed-macro-impl"
-version = "1.1.0"  # !V
+version = "1.1.1"  # !V
 authors = ["Ivan Smirnov <i.s.smirnov@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"

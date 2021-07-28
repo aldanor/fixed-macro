@@ -72,6 +72,8 @@
 //! const C2: Decimal = dec!(-0.123_456);
 //! ```
 
+#![no_std]
+
 pub use fixed_macro_impl::fixed;
 
 /// Macros allowing to create constants for each available fixed-point type.

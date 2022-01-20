@@ -1,5 +1,7 @@
 //! Macros allowing to create constants for each available fixed-point type.
 
+#![no_std]
+
 // 8-bit signed
 #[macro_export]
 /// Macro to create [I8F0](https://docs.rs/fixed/latest/fixed/types/type.I0F8.html) constants.

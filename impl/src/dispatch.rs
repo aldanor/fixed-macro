@@ -1,15 +1,13 @@
-use std::str::FromStr;
-
 use paste::paste;
 use proc_macro2::Literal;
 
 macro_rules! fixed_to_literal {
     ($int_bits:expr, $frac_bits:expr, $signed:expr, $s:expr, $w:expr, $i:expr, $f:expr) => {
             if ($int_bits, $frac_bits, $signed) == ($i, $f, true) {
-                return paste![fixed::types::[<I $i F $f>]::from_str]($s)
+                return paste![<fixed::types::[<I $i F $f>] as std::str::FromStr>::from_str]($s)
                     .map(|x| x.to_bits()).map(paste![Literal::[<i $w _unsuffixed>]])
             } else if ($int_bits, $frac_bits, $signed) == ($i, $f, false) {
-                return paste![fixed::types::[<U $i F $f>]::from_str]($s)
+                return paste![<fixed::types::[<U $i F $f>] as std::str::FromStr>::from_str]($s)
                     .map(|x| x.to_bits()).map(paste![Literal::[<u $w _unsuffixed>]])
             }
     };

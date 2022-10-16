@@ -25,7 +25,7 @@ impl FixedType {
 
     pub fn from_ident(ident: &Ident) -> Result<Self, &'static str> {
         fn parse_size(s: &str) -> Option<u8> {
-            if s.chars().next()?.is_digit(10) {
+            if s.chars().next()?.is_ascii_digit() {
                 let num = u8::from_str(s).ok()?;
                 if num <= 128 {
                     return Some(num);
@@ -64,7 +64,7 @@ fn normalize_float(float: &str) -> Result<String, &'static str> {
         }
         _ => 0,
     };
-    let idx = float.find('.').unwrap_or_else(|| float.len());
+    let idx = float.find('.').unwrap_or(float.len());
     let mut int = float[..idx].to_owned();
     let mut frac = float[idx + 1..].to_owned();
     while exp > 0 {

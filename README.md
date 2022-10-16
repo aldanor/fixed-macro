@@ -16,7 +16,7 @@ easily creating fixed-point constants for all of the fixed-point types provided 
 fixed-macro = "1.1"
 ```
 
-*Compiler support: rustc 1.45+.*
+*Compiler support: rustc 1.61+.*
 
 [fixed]: https://docs.rs/fixed
 [fixed-types]: https://docs.rs/fixed/latest/fixed/types/index.html

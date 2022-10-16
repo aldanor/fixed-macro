@@ -21,12 +21,13 @@ jobs:
       - run: cargo test
 
   msrv:
-    name: Rust 1.45.0
+    name: Rust 1.61.0
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: dtolnay/rust-toolchain@1.45.0
+      - uses: dtolnay/rust-toolchain@1.61.0
       - run: cargo check --tests
+      - run: cargo test test_fixed_macro
 
   clippy:
     name: Clippy

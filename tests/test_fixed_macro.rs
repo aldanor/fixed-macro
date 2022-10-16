@@ -1,11 +1,9 @@
-use std::str::FromStr;
-
 use fixed_macro::fixed;
 
 macro_rules! check_fixed {
     ($ty:ident, $repr:expr, $($value:tt)+) => {{
         const X: $ty = fixed!($($value)+: $ty);
-        assert_eq!(X, $ty::from_str($repr).unwrap());
+        assert_eq!(X, <$ty as std::str::FromStr>::from_str($repr).unwrap());
         assert_eq!(format!("{}", X), $repr);
         const Y: $ty = fixed_macro::types::$ty!($($value)+);
         assert_eq!(X, Y);
